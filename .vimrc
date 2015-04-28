@@ -39,7 +39,7 @@ set go-=L
 "打开高亮
 syntax enable
 
-set fdm=manual
+set fdm=indent
 "key maps
 map <C-T> :tabnew<CR>
 map <C-N> :tabnext<CR>
@@ -161,9 +161,9 @@ nnoremap H :set cursorline! cursorcolumn!<CR>
 "colorscheme pablo
 "colorscheme desert
 "colorscheme candy
-"colorscheme vividchalk
+colorscheme vividchalk
 "colorscheme perfectdark
-colorscheme Dracula
+"colorscheme Dracula
 
 """""""molokai相关设置
 "colorscheme molokai
@@ -250,3 +250,9 @@ syntax on
 
 set mouse=a
 syntax on
+
+"Golang config
+au FileType go nmap <C-]>	gd
+au FileType go nmap <C-g> <Plug>(go-def-vertical)
+
+"fold set
