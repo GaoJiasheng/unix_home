@@ -90,6 +90,10 @@ let NERDTreeShowHidden=1
 let NERDTreeShowLineNumbers=1
 let NERDTreeWinPos='left'
 let NERDTreeWinSize=31
+let NERDTreeDirArrows=1
+let g:NERDTreeDirArrowCollapsible=1
+let g:NERDTreeDirArrowExpandable=1
+
 map <C-C> :NERDTreeFind<CR>
 map <C-C> :NERDTreeToggle<CR>
 
@@ -161,14 +165,14 @@ nnoremap H :set cursorline! cursorcolumn!<CR>
 "colorscheme pablo
 "colorscheme desert
 "colorscheme candy
-colorscheme vividchalk
+"colorscheme vividchalk
 "colorscheme perfectdark
 "colorscheme Dracula
 
 """""""molokai相关设置
-"colorscheme molokai
-"let g:molokai_original = 1
-"let g:rehash256 = 1
+colorscheme molokai
+let g:molokai_original = 1
+let g:rehash256 = 1
 """"""""""""""""""""""
 
 """""""solarized相关设置
@@ -214,12 +218,6 @@ call vundle#rc()
 "let Vundle manage Vundle
 "required!
 Bundle 'gmarik/vundle'
-"vim-scripts repos
-"Bundle 'vim-plugin-foo'
-"Bundle 'vim-plugin-bar'
-"Bundle 'ctrlp.vim'
-"Bundle 'AutoClose'
-"Bundle 'FencView.vim'
 Bundle 'ZenCoding.vim'
 Bundle 'matchit.zip'
 Bundle 'ShowTrailingWhitespace'
@@ -233,9 +231,21 @@ Bundle 'taglist.vim'
 Bundle 'OmniCppComplete'
 Bundle 'https://github.com/Lokaltog/vim-powerline'
 Bundle 'https://github.com/Shougo/neocomplcache.git'
-Bundle 'https://github.com/majutsushi/tagbar.git'
-Bundle 'https://github.com/fatih/vim-go'
 Bundle 'Blackrush/vim-gocode'
+Bundle 'tpope/vim-fugitive'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'tpope/vim-rails.git'
+Bundle 'L9'
+Bundle 'FuzzyFinder'
+Bundle 'fatih/vim-go'
+Bundle 'SirVer/ultisnips'
+Bundle 'majutsushi/tagbar.git'
+Bundle 'Shougo/neocomplete.vim.git'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'jistr/vim-nerdtree-tabs.git'
+Bundle 'scrooloose/nerdtree.git'
+Bundle 'mattn/emmet-vim'
 
 "auto complete
 let g:neocomplcache_enable_at_startup=1
@@ -254,5 +264,16 @@ syntax on
 "Golang config
 au FileType go nmap <C-]>	gd
 au FileType go nmap <C-g> <Plug>(go-def-vertical)
+let g:fencview_autodetect=1
+let g:go_disable_autoinstall = 0
+let g:neocomplete#enable_at_startup = 1
+let g:go_fmt_command = "goimports"
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:godef_split=3
+au BufRead,BufNewFile *.go set filetype=go
 
 "fold set

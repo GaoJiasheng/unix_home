@@ -3,11 +3,12 @@ export GOROOT=$HOME/.tools/go
 export GOPATH=$HOME/work/gopath
 export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:/opt/boxen/homebrew/bin
+export PATH=$PATH:/opt/boxen/homebrew/bin:/usr/local/sbin
 
 #自己的一些环境变量
 export norns=$HOME/work/gopath/src/norns
 export xpharos=$HOME/work/gopath/src/xpharos
+export bifrost=$HOME/work/bifrost
 export blog=$HOME/work/blog
 export gotest=$HOME/work/gopath/src/gotest
 export anomail=$HOME/work/gopath/src/github.com/gaojiasheng/anomail
@@ -21,4 +22,6 @@ alias tmuxsave="sh ~/bin/tmux-save-session.sh"
 alias dev="ssh root@zc-op-shengshengdev00.bj"
 alias relay="ssh gaojiasheng@relay.xiaomi.com"
 alias anotools="cd /Users/gavin/work/mi-bash/bin/ && ./mi-bash -n"
+alias ops="cd /Users/gavin/work/gopath/src/coding.net/ops/www"
+alias falconfe="cd /Users/gavin/work/gopath/src/github.com/open-falcon/fe"
 
