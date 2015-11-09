@@ -11,6 +11,7 @@
         
     "更新插件:
     :BundleInstall!
+    :GoInstallBinaries
 
     "卸载不在列表中的插件:
     :BundleClean
