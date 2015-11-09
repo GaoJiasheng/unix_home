@@ -39,7 +39,7 @@ set go-=L
 "打开高亮
 syntax enable
 
-set fdm=indent
+set fdm=syntax
 "key maps
 map <C-T> :tabnew<CR>
 map <C-N> :tabnext<CR>
@@ -170,17 +170,17 @@ nnoremap H :set cursorline! cursorcolumn!<CR>
 "colorscheme Dracula
 
 """""""molokai相关设置
-colorscheme molokai
-let g:molokai_original = 1
-let g:rehash256 = 1
+"colorscheme molokai
+"let g:molokai_original = 1
+"let g:rehash256 = 1
 """"""""""""""""""""""
 
 """""""solarized相关设置
-"colorscheme solarized
-"let g:solarized_termtrans=1
-"let g:solarized_termcolors=256
-"let g:solarized_contrast="high"
-"let g:solarized_visibility="high"
+colorscheme solarized
+let g:solarized_termtrans=1
+let g:solarized_termcolors=256
+let g:solarized_contrast="high"
+let g:solarized_visibility="high"
 """""""""""""""""""""""
 
 if has('gui_running')
