@@ -168,6 +168,7 @@ nnoremap H :set cursorline! cursorcolumn!<CR>
 "colorscheme vividchalk
 "colorscheme perfectdark
 "colorscheme Dracula
+colorscheme onedark
 
 """""""molokai相关设置
 "colorscheme molokai
@@ -176,11 +177,11 @@ nnoremap H :set cursorline! cursorcolumn!<CR>
 """"""""""""""""""""""
 
 """""""solarized相关设置
-colorscheme solarized
-let g:solarized_termtrans=1
-let g:solarized_termcolors=256
-let g:solarized_contrast="high"
-let g:solarized_visibility="high"
+"colorscheme solarized
+"let g:solarized_termtrans=1
+"let g:solarized_termcolors=256
+"let g:solarized_contrast="high"
+"let g:solarized_visibility="high"
 """""""""""""""""""""""
 
 if has('gui_running')
