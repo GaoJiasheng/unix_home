@@ -1,87 +1,121 @@
-let mapleader = ','
-"不要兼容vi
-set nocompatible
+set nocompatible              " be iMproved
+set nu
+filetype off                  " required!
 
-" Make command line two lines high"
-set ch=2
-set ts=4
-set expandtab
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set rtp+=~/.vim/bundle/vundle/
+call vundle#begin()
 
-set encoding=utf-8
-set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1,gbk,gb2312
-set fileformats=unix
-set scrolloff=3
-set foldnestmax=2
+"vim插件管理
+Bundle 'gmarik/vundle'
+Bundle 'tpope/vim-fugitive'
+Bundle 'ZenCoding.vim'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'tpope/vim-rails.git'
+Bundle 'L9'
+Bundle 'FuzzyFinder'
+Bundle 'fatih/vim-go'
+Bundle 'majutsushi/tagbar.git'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'jistr/vim-nerdtree-tabs.git'
+Bundle 'mattn/emmet-vim'
+Bundle 'scrooloose/nerdtree.git'
+Bundle 'scrooloose/syntastic'
+Bundle 'bling/vim-airline'
+Bundle 'vim-scripts/AutoClose'
+Bundle 'SirVer/ultisnips'
+Bundle 'honza/vim-snippets'
+Bundle 'tpope/vim-surround'
+Bundle 'plasticboy/vim-markdown.git'
 
-set hlsearch incsearch
-"set ignorecase smartcase
-
-set number
-set autoindent
-set showmatch
-set noshowmode
-set ttyfast
-set ruler
-
-set autoread
-set backspace=indent,eol,start
 
 
-"自动换行
-set wrap
-"去除左右两边的滚动条
-set go-=r
-set go-=L
+call vundle#end()            " required
+filetyp plugin indent on     " required!
+
+
+" see :h vundle for more details or wiki for FAQ
+" NOTE: comments after Bundle commands are not allowed.
 
 "打开高亮
 syntax enable
+syntax on
 
-set fdm=syntax
-"key maps
+""set fdm=syntax
+
+""key maps
 map <C-T> :tabnew<CR>
 map <C-N> :tabnext<CR>
 map <C-P> :tabpre<CR>
 
-nnoremap <leader>e :e <C-R>=expand('%:p:h') . '/'<CR>
-nnoremap <leader>, :tabnew <C-R>=expand('%:p:h') . '/'<CR>
-inoremap jj <Esc>
-nnoremap <C-L> :nohl<CR><C-L>
-nnoremap <C-H> :set hls<CR><C-L>
+"go相关的配置
+let g:fencview_autodetect=1
+let g:go_disable_autoinstall = 0
+let g:neocomplete#enable_at_startup = 1
+let g:go_fmt_command = "goimports"
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:godef_split=3
+au BufRead,BufNewFile *.go set filetype=go
 
-"tagbar
-nmap <leader>t :TagbarToggle<CR>
+"airline
+let g:airline#extensions#tabline#enabled = 1
 
-"ctags
-"set tags=./.git/tags;./tags;~/.vim/tags;
-set tags=./ctags;~/.vim/ctags;
-"set autochdir
+"markdown
+let g:vim_markdown_frontmatter=1
 
-"屏蔽掉讨厌的F1键
-inoremap <F1> <ESC>
-nnoremap <F1> <ESC>
-vnoremap <F1> <ESC>
+"全局设置
+set shell=/bin/bash
+set hlsearch
+set mouse=a
+set cuc cul  "这个就是十字架
+set incsearch
+set autoindent
+set smartindent
+set showmatch
+set ruler
+set wrap
+set softtabstop=4
+set shiftwidth=4
+set ignorecase "大小写敏感
+set ignorecase "大小写敏感
+setlocal noswapfile 
+set bufhidden=hide 
+"颜色方案 
+"https://github.com/tomasr/molokai/
+"文件放到~/.vim/colors/molokai.vim
 
-"取消粘贴缩进
-nmap <leader>p :set paste<CR>
-nmap <leader>pp :set nopaste<CR>
+colorscheme  molokai
+set t_Co=256  
+let g:molokai_original = 1
+let g:rehash256 = 1
 
-"插入模式下移动
-inoremap <c-j> <down>
-inoremap <c-k> <up>
-inoremap <c-f> <right>
-inoremap <c-b> <left>
-inoremap <c-a> <home>
-inoremap <c-e> <end>
-"esc的映射
-imap jj <esc>
+"""""""solarized相关设置
+"colorscheme solarized
+"let g:solarized_termtrans=1
+"let g:solarized_termcolors=256
+"let g:solarized_contrast="high"
+"let g:solarized_visibility="high"
+"""""""""""""""""""""""
+
+if has('gui_running')
+     set background=dark
+     set transparency=5
+     "set lines=60
+     "set columns=190
+     set guifont=Monaco:h12
+     set t_Co=256
+else
+     set background=dark
+endif
 
 
-nnoremap Y y$
-
-"设置NERDTree
+" 设置NerdTree
+map <C-c> :NERDTreeToggle<CR>
+"autocmd VimEnter * NERDTree
 let NERDChristmasTree=1
 let NERDTreeAutoCenter=1
 let NERDTreeMouseMode=2
@@ -90,22 +124,43 @@ let NERDTreeShowHidden=1
 let NERDTreeShowLineNumbers=1
 let NERDTreeWinPos='left'
 let NERDTreeWinSize=31
-let NERDTreeDirArrows=1
-let g:NERDTreeDirArrowCollapsible=1
-let g:NERDTreeDirArrowExpandable=1
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+let NERDTreeIgnore = ['\.swp','\.pyc', '\.mod\.c', '\.o', '\.ko', '\.a', '\.so', 'CMakeFiles', '\.cmake', 'CMakeCache.txt']
+"}}}
 
-map <C-C> :NERDTreeFind<CR>
-map <C-C> :NERDTreeToggle<CR>
 
-"设置taglist
-let Tlist_Show_One_File=1 "只显示当前文件的tag
-let Tlist_Exit_OnlyWindow=1 "如果taglist窗口是最后一个窗口则退出vim
-let Tlist_Use_Right_Window=1 "右侧现实taglist
-let Tlist_GainFocus_On_ToggleOpen=1 "自动聚焦到taglist
-map <C-X> :TlistToggle<CR>
+"
+let g:syntastic_cpp_compiler_options = ' -std=c++11'
 
-"设置gocode
-map <C-M> :TagbarToggle<CR>
+
+" YCM{{{
+" youcompleteme  默认tab  s-tab 和自动补全冲突
+" let g:ycm_key_list_select_completion=['<c-n>']
+" let g:ycm_key_list_select_completion = ['<Down>']
+" let g:ycm_key_list_previous_completion=['<c-p>']
+" let g:ycm_key_list_previous_completion = ['<Up>']
+set completeopt=longest,menu	"让Vim的补全菜单行为与一般IDE一致(参考VimTip1228)
+let g:ycm_confirm_extra_conf = 0      "关闭加载.ycm_extra_conf.py提示
+let g:ycm_complete_in_comments = 1    "在注释输入中也能补全
+let g:ycm_complete_in_strings = 1     "在字符串输入中也能补全
+let g:ycm_seed_identifiers_with_syntax = 1                  " 语言关键字补全, 不过python关键字都很短，所以，需要的自己打开
+let g:ycm_min_num_of_chars_for_completion = 1               " 从第2个键入字符就开始罗列匹配项
+let g:ycm_collect_identifiers_from_tags_files = 1           " 开启 YCM 基于标签引擎
+let g:ycm_collect_identifiers_from_comments_and_strings = 1 " 注释和字符串中的文字也会被收入补全
+let g:ycm_warning_symbol = '>>'
+let g:ycm_error_symbol = '->'
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+nnoremap <leader>gh :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" mapping
+inoremap <expr> <CR>       pumvisible()?"\<C-Y>":"\<CR>"
+inoremap <expr> <C-J>      pumvisible()?"\<PageDown>\<C-N>\<C-P>":"\<C-X><C-O>"
+inoremap <expr> <C-K>      pumvisible()?"\<PageUp>\<C-P>\<C-N>":"\<C-K>"
+inoremap <expr> <C-U>      pumvisible()?"\<C-E>":"\<C-U>" 
+" YCM settings
+
+"ctags tagbar相关配置
 let g:tagbar_type_go = {
     \ 'ctagstype' : 'go',
     \ 'kinds'     : [
@@ -132,149 +187,71 @@ let g:tagbar_type_go = {
     \ },
     \ 'ctagsbin'  : 'gotags',
     \ 'ctagsargs' : '-sort -silent'
-    \ }
+\ }
+nmap <CR> :TagbarToggle<CR>
+autocmd BufReadPost *.cpp,*.c,*.h,*.hpp,*.cc,*.cxx,*.go,*.py,*.txt call tagbar#autoopen()
 
-"powerline
-set laststatus=2
-"let g:Powerline_symbols = 'fancy'
-"let g:Powerline_symbols = 'unicode'
-let g:showmarks_enable = 0
-let g:showmarks_include = "abcdefghijklmnopqrstuvwxyz".
-                        \ "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-let g:showmarks_textlower = " "
-let g:showmarks_textupper = " "
-let g:showmarks_textother = " "
-let g:showmarks_hlline_lower = 1
-let g:showmarks_hlline_upper = 1
-let g:showmarks_hlline_other = 1
-
-"tab键显示待选项
-set wildmenu
+"ctags
+"let Tlist_Ctags_Cmd="/usr/local/bin/ctags"
+"let Tlist_Show_One_File = 1 
+"let Tlist_Exit_OnlyWindow = 1 
+"let Tlist_Use_Left_Window = 0 
+"let Tlist_Sort_Type = 'name' 
+"let Tlist_Auto_Open = 1 
+"let Tlist_Auto_Update = 1 
+"let Tlist_WinWidth = 25 
+"let Tlist_Use_Right_Window= 1 
+"let Tlist_File_Fold_Auto_Close=1 
 
 
-set t_Co=256
-"设置光标高亮显示
-set cursorline    "same as set cul
-set cursorcolumn  "same as set cuc
-hi CursorLine term=bold cterm=bold "guibg=0 ctermbg=235
-hi CursorColumn term=bold cterm=bold "guibg=0 ctermbg=235
-"toggle hi of cuc and cul
-nnoremap H :set cursorline! cursorcolumn!<CR>
+"屏蔽掉讨厌的F1键
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+"取消粘贴缩进
+nmap <leader>p :set paste<CR>
+nmap <leader>pp :set nopaste<CR>
+"插入模式下移动
+inoremap <c-e> <right>
+inoremap <c-w> <left>
+"去掉左右两边的滚动条
+set go-=r
+set go-=L
 
-"""""""""""""""""""""""""""""""""""COLOR SCHEMA"""""""""""""""""""""""
-"colorscheme pablo
-"colorscheme desert
-"colorscheme candy
-"colorscheme vividchalk
-"colorscheme perfectdark
-"colorscheme Dracula
-colorscheme onedark
-
-"""""""molokai相关设置
-"colorscheme molokai
-"let g:molokai_original = 1
-"let g:rehash256 = 1
-""""""""""""""""""""""
-
-"""""""solarized相关设置
-"colorscheme solarized
-"let g:solarized_termtrans=1
-"let g:solarized_termcolors=256
-"let g:solarized_contrast="high"
-"let g:solarized_visibility="high"
-"""""""""""""""""""""""
-
-if has('gui_running')
-     set background=dark
-     set transparency=5
-     "set lines=60
-     "set columns=190
-     set guifont=Monaco:h15
-     set t_Co=256
-else
-     set background=dark
-endif
-"""""""""""""""""""""""""""""""""""COLOR SCHEMA"""""""""""""""""""""""
-
-"将-连接符也设置为单词
-set isk+=-
-
-"自动载入配置文件不需要重启
-"autocmd! bufwritepost _vimrc source %
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-
-"行号自动跳转
-if has("autocmd")
-  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
-    \| exe "normal! g'\"" | endif
-endif
+"快捷键
+nnoremap nw <C-W><C-W>
 
 
-"vim 插件管理
-"git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-filetype off        " required!
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-"let Vundle manage Vundle
-"required!
-Bundle 'gmarik/vundle'
-Bundle 'ZenCoding.vim'
-Bundle 'matchit.zip'
-Bundle 'ShowTrailingWhitespace'
-Bundle '_jsbeautify'
-Bundle 'EasyMotion'
-Bundle 'The-NERD-tree'
-Bundle 'The-NERD-Commenter'
-Bundle 'snipMate'
-Bundle 'bufexplorer.zip'
-Bundle 'taglist.vim'
-Bundle 'OmniCppComplete'
-Bundle 'https://github.com/Lokaltog/vim-powerline'
-Bundle 'https://github.com/Shougo/neocomplcache.git'
-Bundle 'Blackrush/vim-gocode'
-Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'tpope/vim-rails.git'
-Bundle 'L9'
-Bundle 'FuzzyFinder'
-Bundle 'fatih/vim-go'
-Bundle 'SirVer/ultisnips'
-Bundle 'majutsushi/tagbar.git'
-Bundle 'Shougo/neocomplete.vim.git'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'jistr/vim-nerdtree-tabs.git'
-Bundle 'scrooloose/nerdtree.git'
-Bundle 'mattn/emmet-vim'
 
-"auto complete
-let g:neocomplcache_enable_at_startup=1
+" set mapleader
+let mapleader = ","
 
-"必须的设置：
-filetype on
-filetype plugin indent on
-filetype plugin on
 
+
+" python 的配置
+autocmd FileType python set omnifunc=pythoncomplete#Complete   
+
+
+
+
+"自动添加文件头
+function HeaderPython()
+    call setline(1, "#!/usr/bin/env python")
+    call append(1, "#coding=utf-8")
+    call append(2, "#author :zhouxiaolong")
+    call append(3, "#" . strftime('%Y-%m-%d %T', localtime()))
+    normal G
+    normal o
+    normal o
+endf
+autocmd bufnewfile *.py call HeaderPython()
+
+
+
+"ulti
+let g:UltiSnipsExpandTrigger="<C-t>"
+let g:UltiSnipsJumpForwardTrigger="<C-h>"
+let g:UltiSnipsJumpBackwardTrigger="<C-z>"
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical""
 syntax on
-
-
-set mouse=a
-syntax on
-
-"Golang config
-au FileType go nmap <C-]>	gd
-au FileType go nmap <C-g> <Plug>(go-def-vertical)
-let g:fencview_autodetect=1
-let g:go_disable_autoinstall = 0
-let g:neocomplete#enable_at_startup = 1
-let g:go_fmt_command = "goimports"
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
-let g:godef_split=3
-au BufRead,BufNewFile *.go set filetype=go
-
-"fold set

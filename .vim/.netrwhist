@@ -1,10 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
-let g:netrw_dirhist_1='/root/program/nsdat'
-let g:netrw_dirhist_2='/root'
-let g:netrw_dirhist_3='/root/src/lvs-fullnat-synproxy/tools/.git'
-let g:netrw_dirhist_4='/root/.neocon'
-let g:netrw_dirhist_5='/root/.config'
-let g:netrw_dirhist_6='/root/git.n.xiaomi.com/zabbix/database/postgresql'
-let g:netrw_dirhist_7='/Users/gavin/work/gopath/src/xpharos/tools/batch_insert'
-let g:netrw_dirhist_8='/Users/gavin/work/gopath/src/xpharos/tests'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/gavin/work/bifrost/libs/components'
+let g:netrw_dirhist_2='/Users/gavin/work/bifrost/log/common'
+let g:netrw_dirhist_3='/Users/gavin/work/gopath/src/norns/controllers'
+let g:netrw_dirhist_4='/Users/gavin/work/bifrost/conf'
