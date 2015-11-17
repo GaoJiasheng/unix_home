@@ -224,7 +224,7 @@ nnoremap nw <C-W><C-W>
 
 
 " set mapleader
-let mapleader = ","
+let mapleader=','
 
 
 
@@ -238,7 +238,7 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 function HeaderPython()
     call setline(1, "#!/usr/bin/env python")
     call append(1, "#coding=utf-8")
-    call append(2, "#author :zhouxiaolong")
+    call append(2, "#author:gaojiasheng")
     call append(3, "#" . strftime('%Y-%m-%d %T', localtime()))
     normal G
     normal o
@@ -248,10 +248,9 @@ autocmd bufnewfile *.py call HeaderPython()
 
 
 
-"ulti
-let g:UltiSnipsExpandTrigger="<C-t>"
-let g:UltiSnipsJumpForwardTrigger="<C-h>"
-let g:UltiSnipsJumpBackwardTrigger="<C-z>"
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical""
-syntax on
+" UltiSnips 的 tab 键与 YCM 冲突，重新设定
+ let g:UltiSnipsSnippetDirectories=['UltiSnips']
+ let g:UltiSnipsSnippetsDir = '~/.vim/bundle/vim-snippets/UltiSnips'
+ let g:UltiSnipsExpandTrigger="<leader><tab>"
+ let g:UltiSnipsJumpForwardTrigger="<leader><tab>"
+ let g:UltiSnipsJumpBackwardTrigger="<leader><s-tab>""
