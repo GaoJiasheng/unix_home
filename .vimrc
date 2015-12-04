@@ -48,6 +48,10 @@ map <C-T> :tabnew<CR>
 map <C-N> :tabnext<CR>
 map <C-P> :tabpre<CR>
 
+"共享剪贴板数据
+set clipboard+=unnamed 
+""""
+
 "go相关的配置
 let g:fencview_autodetect=1
 let g:go_disable_autoinstall = 0
@@ -79,6 +83,8 @@ set showmatch
 set ruler
 set wrap
 set softtabstop=4
+set ts=4
+set expandtab
 set shiftwidth=4
 set ignorecase "大小写敏感
 set ignorecase "大小写敏感
@@ -237,8 +243,8 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 "自动添加文件头
 function HeaderPython()
     call setline(1, "#!/usr/bin/env python")
-    call append(1, "#coding=utf-8")
-    call append(2, "#author:gaojiasheng")
+    call append(1, "# -*- coding:utf-8 -*-")
+    call append(2, "#Author : GaoJiasheng")
     call append(3, "#" . strftime('%Y-%m-%d %T', localtime()))
     normal G
     normal o
