@@ -88,17 +88,17 @@ set bufhidden=hide
 "https://github.com/tomasr/molokai/
 "文件放到~/.vim/colors/molokai.vim
 
-colorscheme  molokai
-set t_Co=256  
-let g:molokai_original = 1
-let g:rehash256 = 1
+"colorscheme  molokai
+"set t_Co=256  
+"let g:molokai_original = 1
+"let g:rehash256 = 1
 
 """""""solarized相关设置
-"colorscheme solarized
-"let g:solarized_termtrans=1
-"let g:solarized_termcolors=256
-"let g:solarized_contrast="high"
-"let g:solarized_visibility="high"
+colorscheme solarized
+let g:solarized_termtrans=1
+let g:solarized_termcolors=256
+let g:solarized_contrast="high"
+let g:solarized_visibility="high"
 """""""""""""""""""""""
 
 if has('gui_running')
@@ -254,3 +254,15 @@ autocmd bufnewfile *.py call HeaderPython()
  let g:UltiSnipsExpandTrigger="<leader><tab>"
  let g:UltiSnipsJumpForwardTrigger="<leader><tab>"
  let g:UltiSnipsJumpBackwardTrigger="<leader><s-tab>""
+
+ " easy motion 配置
+ map <Leader>ef <Plug>(easymotion-lineforward)
+ map <Leader>eb <Plug>(easymotion-linebackward)
+ map <Leader><Leader>d <Plug>(easymotion-j)
+ map <Leader><Leader>t <Plug>(easymotion-k)
+ map  / <Plug>(easymotion-sn)
+ omap / <Plug>(easymotion-tn)
+ map  n <Plug>(easymotion-next)
+ map  N <Plug>(easymotion-prev)
+ let g:EasyMotion_smartcase = 1
+ let g:EasyMotion_startofline = 0 " keep cursor column when JK motion"
