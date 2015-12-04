@@ -7,11 +7,9 @@ call vundle#begin()
 
 "vim插件管理
 Bundle 'gmarik/vundle'
+Bundle 'vim-powerline'
+"Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-fugitive'
-Bundle 'ZenCoding.vim'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'tpope/vim-rails.git'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
 Bundle 'fatih/vim-go'
@@ -20,13 +18,16 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'jistr/vim-nerdtree-tabs.git'
 Bundle 'mattn/emmet-vim'
 Bundle 'scrooloose/nerdtree.git'
-Bundle 'scrooloose/syntastic'
-Bundle 'bling/vim-airline'
 Bundle 'vim-scripts/AutoClose'
 Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
 Bundle 'tpope/vim-surround'
-Bundle 'plasticboy/vim-markdown.git'
+"Bundle 'plasticboy/vim-markdown.git'
+"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+"Bundle 'scrooloose/syntastic'
+"Bundle 'bling/vim-airline'
+"Bundle 'ZenCoding.vim'
+"Bundle 'tpope/vim-rails.git'
 
 
 
@@ -195,7 +196,7 @@ let g:tagbar_type_go = {
     \ 'ctagsargs' : '-sort -silent'
 \ }
 nmap <CR> :TagbarToggle<CR>
-autocmd BufReadPost *.cpp,*.c,*.h,*.hpp,*.cc,*.cxx,*.go,*.py,*.txt call tagbar#autoopen()
+"autocmd BufReadPost *.cpp,*.c,*.h,*.hpp,*.cc,*.cxx,*.go,*.py,*.txt call tagbar#autoopen()
 
 "ctags
 "let Tlist_Ctags_Cmd="/usr/local/bin/ctags"
@@ -262,13 +263,13 @@ autocmd bufnewfile *.py call HeaderPython()
  let g:UltiSnipsJumpBackwardTrigger="<leader><s-tab>""
 
  " easy motion 配置
- map <Leader>ef <Plug>(easymotion-lineforward)
- map <Leader>eb <Plug>(easymotion-linebackward)
- map <Leader><Leader>d <Plug>(easymotion-j)
- map <Leader><Leader>t <Plug>(easymotion-k)
- map  / <Plug>(easymotion-sn)
- omap / <Plug>(easymotion-tn)
- map  n <Plug>(easymotion-next)
- map  N <Plug>(easymotion-prev)
- let g:EasyMotion_smartcase = 1
- let g:EasyMotion_startofline = 0 " keep cursor column when JK motion"
+ "map <Leader>ef <Plug>(easymotion-lineforward)
+ "map <Leader>eb <Plug>(easymotion-linebackward)
+ "map <Leader><Leader>d <Plug>(easymotion-j)
+ "map <Leader><Leader>t <Plug>(easymotion-k)
+ "map  / <Plug>(easymotion-sn)
+ "omap / <Plug>(easymotion-tn)
+ "map  n <Plug>(easymotion-next)
+ "map  N <Plug>(easymotion-prev)
+ "let g:EasyMotion_smartcase = 1
+ "let g:EasyMotion_startofline = 0 " keep cursor column when JK motion"
