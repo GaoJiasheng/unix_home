@@ -6,8 +6,8 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#begin()
 
 "vim插件管理
-Bundle 'gmarik/vundle'
-Bundle 'vim-powerline'
+Bundle 'gmarik/vundle' 
+Bundle 'Lokaltog/vim-powerline'
 "Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-fugitive'
 Bundle 'L9'
@@ -16,17 +16,15 @@ Bundle 'fatih/vim-go'
 Bundle 'majutsushi/tagbar.git'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'jistr/vim-nerdtree-tabs.git'
-Bundle 'mattn/emmet-vim'
 Bundle 'scrooloose/nerdtree.git'
 Bundle 'vim-scripts/AutoClose'
-Bundle 'SirVer/ultisnips'
-Bundle 'honza/vim-snippets'
+"Bundle 'SirVer/ultisnips'
+"Bundle 'honza/vim-snippets'
 Bundle 'tpope/vim-surround'
 "Bundle 'plasticboy/vim-markdown.git'
 "Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 "Bundle 'scrooloose/syntastic'
-"Bundle 'bling/vim-airline'
-"Bundle 'ZenCoding.vim'
+Bundle 'bling/vim-airline'
 "Bundle 'tpope/vim-rails.git'
 
 
@@ -95,17 +93,14 @@ set bufhidden=hide
 "https://github.com/tomasr/molokai/
 "文件放到~/.vim/colors/molokai.vim
 
-"colorscheme  molokai
-"set t_Co=256  
-"let g:molokai_original = 1
-"let g:rehash256 = 1
+colorscheme  molokai
 
 """""""solarized相关设置
-colorscheme solarized
-let g:solarized_termtrans=1
-let g:solarized_termcolors=256
-let g:solarized_contrast="high"
-let g:solarized_visibility="high"
+""colorscheme solarized
+""let g:solarized_termtrans=1
+""let g:solarized_termcolors=256
+""let g:solarized_contrast="high"
+""let g:solarized_visibility="high"
 """""""""""""""""""""""
 
 if has('gui_running')
@@ -273,3 +268,4 @@ autocmd bufnewfile *.py call HeaderPython()
  "map  N <Plug>(easymotion-prev)
  "let g:EasyMotion_smartcase = 1
  "let g:EasyMotion_startofline = 0 " keep cursor column when JK motion"
+syntax on
