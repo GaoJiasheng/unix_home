@@ -16,12 +16,10 @@ export work=$HOME/work/
 export xbox=$HOME/work/service-tree/
 export dt=$HOME/work/apue-practice/data_struct/
 export fe=$HOME/work/norns-fe/
+export tree=$HOME/work/gopath/src/WorldTree/
 
 #一些命令的配置
 alias tmuxsave="sh ~/bin/tmux-save-session.sh"
-alias dev="ssh root@zc-op-shengshengdev00.bj"
-alias relay="ssh gaojiasheng@relay.xiaomi.com"
 alias anotools="cd /Users/gavin/work/mi-bash/bin/ && ./mi-bash -n"
-alias ops="cd /Users/gavin/work/gopath/src/coding.net/ops/www"
-alias falconfe="cd /Users/gavin/work/gopath/src/github.com/open-falcon/fe"
+alias vi="vim"
 

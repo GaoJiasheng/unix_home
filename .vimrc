@@ -93,14 +93,14 @@ set bufhidden=hide
 "https://github.com/tomasr/molokai/
 "文件放到~/.vim/colors/molokai.vim
 
-colorscheme  molokai
+"colorscheme  molokai
 
 """""""solarized相关设置
-""colorscheme solarized
-""let g:solarized_termtrans=1
-""let g:solarized_termcolors=256
-""let g:solarized_contrast="high"
-""let g:solarized_visibility="high"
+colorscheme solarized
+let g:solarized_termtrans=1
+let g:solarized_termcolors=256
+let g:solarized_contrast="high"
+let g:solarized_visibility="high"
 """""""""""""""""""""""
 
 if has('gui_running')

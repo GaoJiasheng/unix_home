@@ -10,3 +10,4 @@ fi
 source ~/.myownrc
 source ~/.git-completion.bash
 source ~/.git-completion.bash
+source ~/.git-completion.bash
