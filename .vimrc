@@ -10,8 +10,8 @@ Bundle 'gmarik/vundle'
 Bundle 'Lokaltog/vim-powerline'
 "Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-fugitive'
-Bundle 'L9'
-Bundle 'FuzzyFinder'
+"Bundle 'L9'
+"Bundle 'FuzzyFinder'
 Bundle 'fatih/vim-go'
 Bundle 'majutsushi/tagbar.git'
 Bundle 'Valloric/YouCompleteMe'
@@ -20,13 +20,14 @@ Bundle 'scrooloose/nerdtree.git'
 Bundle 'vim-scripts/AutoClose'
 "Bundle 'SirVer/ultisnips'
 "Bundle 'honza/vim-snippets'
-Bundle 'tpope/vim-surround'
+"Bundle 'tpope/vim-surround'
 "Bundle 'plasticboy/vim-markdown.git'
 "Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 "Bundle 'scrooloose/syntastic'
-Bundle 'bling/vim-airline'
+"Bundle 'bling/vim-airline'
 "Bundle 'tpope/vim-rails.git'
 
+let g:Powerline_symbols = 'fancy'
 
 
 call vundle#end()            " required
