@@ -7,7 +7,7 @@ call vundle#begin()
 
 "vim插件管理
 Bundle 'gmarik/vundle' 
-Bundle 'Lokaltog/vim-powerline'
+"Bundle 'Lokaltog/vim-powerline'
 "Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-fugitive'
 "Bundle 'L9'
@@ -24,11 +24,10 @@ Bundle 'vim-scripts/AutoClose'
 "Bundle 'plasticboy/vim-markdown.git'
 "Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 "Bundle 'scrooloose/syntastic'
-"Bundle 'bling/vim-airline'
+Bundle 'bling/vim-airline'
 "Bundle 'tpope/vim-rails.git'
-
-let g:Powerline_symbols = 'fancy'
-
+Plugin 'powerline/fonts'
+Plugin 'vim-airline/vim-airline-themes'
 
 call vundle#end()            " required
 filetyp plugin indent on     " required!
@@ -65,8 +64,19 @@ let g:go_highlight_build_constraints = 1
 let g:godef_split=3
 au BufRead,BufNewFile *.go set filetype=go
 
-"airline
-let g:airline#extensions#tabline#enabled = 1
+"vim-airline
+let g:airline_powerline_fonts = 1
+let g:airline_theme='term'
+let g:airline_powerline_fonts=0
+""let g:airline#extensions#tabline#enabled = 1
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+
+let g:airline_section_c = '%t'
+let g:airline_section_x = '%{strlen(&ft) ? &ft : "Noft"}%{&bomb ? " BOM" : ""}'
+let g:airline_section_y = '%{&fileformat} %{(&fenc == "" ? &enc : &fenc)}'
+let g:airline_section_z = '%2l:%-1v/%L'
+
 
 "markdown
 let g:vim_markdown_frontmatter=1

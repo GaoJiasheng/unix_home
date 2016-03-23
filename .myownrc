@@ -1,5 +1,6 @@
 # go配置
 export GOROOT=$HOME/.tools/go
+export GOBIN=$HOME/.tools/go/bin
 export GOPATH=$HOME/work/gopath
 export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$GOPATH/bin
@@ -22,4 +23,4 @@ export tree=$HOME/work/gopath/src/WorldTree/
 alias tmuxsave="sh ~/bin/tmux-save-session.sh"
 alias anotools="cd /Users/gavin/work/mi-bash/bin/ && ./mi-bash -n"
 alias vi="vim"
-alias dev="ssh root@192.168.196.132"
+alias dev="ssh root@192.168.31.222"
