@@ -43,7 +43,7 @@ syntax on
 ""set fdm=syntax
 
 ""key maps
-map <C-T> :tabnew<CR>
+"map <C-T> :tabnew<CR>
 map <C-N> :tabnext<CR>
 map <C-P> :tabpre<CR>
 
@@ -62,7 +62,10 @@ let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 let g:godef_split=3
-au BufRead,BufNewFile *.go set filetype=go
+
+au FileType go nmap ds <Plug>(go-def-split)
+au FileType go nmap dv <Plug>(go-def-vertical)
+au FileType go nmap dt <Plug>(go-def-tab)
 
 "vim-airline
 let g:airline_powerline_fonts = 1
@@ -104,7 +107,7 @@ set bufhidden=hide
 "https://github.com/tomasr/molokai/
 "文件放到~/.vim/colors/molokai.vim
 
-"colorscheme  molokai
+colorscheme  molokai
 
 """""""solarized相关设置
 colorscheme solarized
@@ -115,6 +118,7 @@ let g:solarized_visibility="high"
 """""""""""""""""""""""
 
 if has('gui_running')
+    colorscheme  molokai
      set background=dark
      set transparency=5
      "set lines=60
