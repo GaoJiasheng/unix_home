@@ -2,6 +2,14 @@
 hardstatus alwayslastline 
 hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
 
+startup_message off  
+defscrollback 2048  
+termcapinfo xterm|xterms|xs|rxvt ti@:te@  
+term xterm  
+defutf8 on  
+defflow off  
+vbell off  
+
 # my key binding
 bind ' ' copy
 bind j next
