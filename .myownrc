@@ -25,3 +25,5 @@ alias anotools="cd /Users/gavin/work/mi-bash/bin/ && ./mi-bash -n"
 alias vi="vim"
 alias dev="ssh root@192.168.31.222"
 alias grep="grep -n --color"
+
+#PS1="\[\e[37;40m\][\[\e[32;40m\]\u\[\e[33;40m\]@\[\e[35;40m\]\h \[\e[36;40m\]\W\[\e[37;40m\]]\\$ "
