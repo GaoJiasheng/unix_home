@@ -15,6 +15,10 @@
 
     "卸载不在列表中的插件:
     :BundleClean
+    
+    "安装YCM
+    cd ~/.vim/bundle
+    ./install.py --clang-completer --gocode-completer
 
 
 ctags vim
