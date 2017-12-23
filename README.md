@@ -1,41 +1,54 @@
-# GaoJiasheng  Unix Home
+Unix Home Environment
+==
+How to install
+--
+Clone environment git repo
 
-## fork from laiwei & yubo ， thanks
-## thanks http://beiyuu.com/git-vim-tutorial/ too
+    cd ~ && git clone https://github.com/GaoJiasheng/unix_home.git .env_home
+Install config file
 
-    cd ~/unix_home && sh install.sh
+	cd ~/.env_home && sh install
+Build & Instal Vim
+
+    git clone https://github.com/vim/vim.git && cd vim/
+    ./configure --prefix=/usr/local/vim --with-features=huge --enable-pythoninterp --enable-perlinterp --enable-rubyinterp --enable-luainterp --enable-multibyte --enable-sniff --enable-fontset --with-features=huge --enable-pythoninterp --enable-perlinterp --enable-rubyinterp --enable-luainterp --enable-multibyte --enable-sniff --enable-cscope
+    make && make install
+
+Link Vim
+    
+    sudo mv /bin/vim /bin/vim.bk
+    echo 'export PATH=$PATH:/usr/local/vim/bin/' >> ~/.bashrc
+    echo 'alias vi=vim' >> ~/.bashrc
+
+Install Vim Plugins
 
     vim
     :BundleInstall
-    :q
-        
-    "更新插件:
-    :BundleInstall!
-    :GoInstallBinaries
 
-    "卸载不在列表中的插件:
-    :BundleClean
-    
-    "安装YCM
-    cd ~/.vim/bundle
-    ./install.py --clang-completer --gocode-completer
+Install cmake
+
+	yum install -y cmake  (CentOS)
+	apt-get install -y cmake  (Ubuntu)
+	brew install -y cmake (OSX)
+
+Install YouCompleteMe
+		
+	cd ~/.vim/bundle/YouCompleteMe
+	./install.sh --clang-completer --system-libclang --omnisharp-completer --gocode-completer
+
+Install Golang Binary
+
+	mkdir -p ~/.tools && mkdir -p ~/work/gopath && cd ~/.tools
+	wget https://storage.googleapis.com/golang/go1.9.2.darwin-amd64.tar.gz (OSX)
+	tar -zxvf go1.9.2.darwin-amd64.tar.gz
+
+Install Golang Plugins
+	
+	vim
+	:GoInstallBinaries
 
 
-ctags vim
-====
 
-C-] - go to definition
-C-T - Jump back from the definition.
-C-W C-] - Open the definition in a horizontal split
+---------
+*fork from laiwei & yubo , thanks*
 
-Add these lines in vimrc
-map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
-map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
-
-C-\ - Open the definition in a new tab
-A-] - Open the definition in a vertical split
-
-After the tags are generated. You can use the following keys to tag into and tag out of functions:
-
-Ctrl-Left_MouseClick - Go to definition
-Ctrl-Right_MouseClick - Jump back from definition
