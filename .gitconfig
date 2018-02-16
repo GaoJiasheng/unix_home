@@ -7,3 +7,5 @@
 	prompt = No
 [core]
 	editor = vim
+[color]
+    ui = auto
