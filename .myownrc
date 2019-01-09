@@ -5,25 +5,11 @@ export GOPATH=$HOME/work/gopath
 export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/opt/boxen/homebrew/bin:/usr/local/sbin
+export PATH=$PATH:/usr/local/vim/bin/
 
-#自己的一些环境变量
-export norns=$HOME/work/gopath/src/norns
-export xpharos=$HOME/work/gopath/src/xpharos
-export bifrost=$HOME/work/bifrost
-export blog=$HOME/work/blog
-export gotest=$HOME/work/gopath/src/gotest
-export anomail=$HOME/work/gopath/src/github.com/gaojiasheng/anomail
-export work=$HOME/work/
-export xbox=$HOME/work/service-tree/
-export dt=$HOME/work/apue-practice/data_struct/
-export fe=$HOME/work/norns-fe/
-export tree=$HOME/work/gopath/src/WorldTree/
+source /Users/gavin/Library/Mobile\ Documents/com~apple~CloudDocs/2code/bash_env/cloud_env.sh
 
 #一些命令的配置
-alias tmuxsave="sh ~/bin/tmux-save-session.sh"
-alias anotools="cd /Users/gavin/work/mi-bash/bin/ && ./mi-bash -n"
+alias gopath="cd /Users/gavin/work/gopath"
 alias vi="vim"
-alias dev="ssh root@192.168.31.222"
 alias grep="grep -n --color"
-
-#PS1="\[\e[37;40m\][\[\e[32;40m\]\u\[\e[33;40m\]@\[\e[35;40m\]\h \[\e[36;40m\]\W\[\e[37;40m\]]\\$ "
