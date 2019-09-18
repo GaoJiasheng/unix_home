@@ -1,7 +1,7 @@
 # go配置
 #export CODEDIR="/Users/gavin/Library/Mobile\\ Documents/com~apple~CloudDocs/2code"
 export CODEDIR="/Users/gavin/Library/Mobile Documents/com~apple~CloudDocs/2code"
-export TOOLDIR="$CODEDIR/tools"
+export TOOLDIR="$CODEDIR/tool"
 
 export GOROOT=$TOOLDIR/go
 export GOBIN=$TOOLDIR/go/bin
