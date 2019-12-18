@@ -1,6 +1,6 @@
 # go配置
 #export CODEDIR="/Users/gavin/Library/Mobile\\ Documents/com~apple~CloudDocs/2code"
-export CODEDIR="/Users/gavin/Library/Mobile Documents/com~apple~CloudDocs/2code"
+export CODEDIR="/Users/gavin.gao/Library/Mobile Documents/com~apple~CloudDocs/2code"
 export TOOLDIR="$CODEDIR/tool"
 
 export GOROOT=$TOOLDIR/go
@@ -18,3 +18,5 @@ source "$CODEDIR/bash_env/cloud_env.sh"
 alias gopath='cd "$GOPATH"'
 alias vi="vim"
 alias grep="grep -n --color"
+
+alias relay='ssh -t 10.70.7.140 "sudo -iu shopee-jenkins"'
