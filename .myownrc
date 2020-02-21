@@ -1,6 +1,7 @@
 # go配置
 #export CODEDIR="/Users/gavin/Library/Mobile\\ Documents/com~apple~CloudDocs/2code"
-export CODEDIR="/Users/gavin.gao/Library/Mobile Documents/com~apple~CloudDocs/2code"
+WHOAMI=`whoami`
+export CODEDIR="/Users/${WHOAMI}/Library/Mobile Documents/com~apple~CloudDocs/2code"
 export TOOLDIR="$CODEDIR/tool"
 
 export GOROOT=$TOOLDIR/go
@@ -19,4 +20,9 @@ alias gopath='cd "$GOPATH"'
 alias vi="vim"
 alias grep="grep -n --color"
 
-alias relay='ssh -t 10.70.7.140 "sudo -iu shopee-jenkins"'
+alias relay='ssh 10.70.7.140'
+alias work='cd "/Users/gavin/Library/Mobile Documents/com~apple~CloudDocs/2code/work"'
+alias prometheus='cd "/Users/gavin/Library/Mobile Documents/com~apple~CloudDocs/2code/work/Prometheus"'
+
+export PATH=/usr/local/Cellar/git/2.25.0_1:$PATH
+export PATH=/Users/gavin/Library/Python/2.7/bin:$PATH
