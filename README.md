@@ -11,7 +11,7 @@ Install config file
 Build & Instal Vim
 
     git clone https://github.com/vim/vim.git && cd vim/
-    ./configure --prefix=/usr/local/vim --with-features=huge --enable-pythoninterp --enable-perlinterp --enable-rubyinterp --enable-luainterp --enable-multibyte --enable-sniff --enable-fontset --with-features=huge --enable-pythoninterp --enable-perlinterp --enable-rubyinterp --enable-luainterp --enable-multibyte --enable-sniff --enable-cscope
+    ./configure --prefix=/usr/local/vim --with-features=huge --enable-pythoninterp --enable-perlinterp --enable-rubyinterp --enable-luainterp --enable-multibyte --enable-sniff --enable-fontset --with-features=huge --enable-python3interp --enable-perlinterp --enable-rubyinterp --enable-luainterp --enable-multibyte --enable-sniff --enable-cscope
     make && make install
 
 Link Vim
