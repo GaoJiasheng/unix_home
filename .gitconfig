@@ -9,3 +9,5 @@
 	editor = vim
 [color]
     ui = auto
+[url "ssh://gitlab@git.garena.com:2222/"]
+	insteadOf = https://git.garena.com/
