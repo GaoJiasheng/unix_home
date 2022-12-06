@@ -2,6 +2,7 @@
 #export CODEDIR="/Users/gavin/Library/Mobile\\ Documents/com~apple~CloudDocs/2code"
 WHOAMI=`whoami`
 export CODEDIR="/Users/${WHOAMI}/work"
+export TOOLDIR="$CODEDIR/tool"
 
 export GOROOT=$CODEDIR/go/go
 export GOBIN=$CODEDIR/go/go//bin
@@ -20,9 +21,19 @@ alias grep="grep -n --color"
 alias leetcode="cd /Users/gavin/work/gopath/src/github.com/gaojiasheng/JustForFun/Algrithm/leetcode"
 alias lc="cd /Users/gavin/work/gopath/src/github.com/gaojiasheng/JustForFun/Algrithm/leetcode"
 
-alias relay='smc-toc 10.70.7.140'
+alias relay='smc toc 10.70.7.140'
 alias work='cd "/Users/gavin/work"'
 alias prom='cd "/Users/gavin/work/prometheus"'
 alias vm='cd "/Users/gavin/work/vm"'
 alias blog='cd "/Users/gavin/blog"'
 export GO111MODULE=auto
+export GOSUMDB=off
+export GOPROXY=https://goproxy.io,direct
+export GOPRIVATE=git.garena.com/shopee,git.garena.com/shopee-server,git.garena.com
+
+# tmux
+alias tnew='tmux new -s'
+alias tdetach='tmux detach'
+alias tattach='tmux a -t'
+alias tls='tmux ls'
+alias trename='tmux rename-session -t'
