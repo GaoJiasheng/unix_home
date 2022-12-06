@@ -1,5 +1,6 @@
 set nocompatible              " be iMproved
 set nu
+set encoding=utf-8
 filetype off                  " required!
 
 set rtp+=~/.vim/bundle/vundle/

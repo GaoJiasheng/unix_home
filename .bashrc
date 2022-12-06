@@ -11,3 +11,4 @@ source ~/.myownrc
 source ~/.git-completion.bash
 export PATH=$PATH:/usr/local/vim/bin/
 alias vi=vim
+source ~/.git-completion.bash
