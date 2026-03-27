@@ -17,7 +17,7 @@ alias vi="vim"
 alias grep="grep -n --color"
 
 alias work='cd "/Users/gavin/work"'
-alias doc='cd "/Users/gavin/obsidian"'
+alias doc='cd "/Users/gavin/obsidian/AI Generations"'
 alias blog='cd "/Users/gavin/blog"'
 
 # tmux
@@ -26,3 +26,7 @@ alias tdetach='tmux detach'
 alias tattach='tmux a -t'
 alias tls='tmux ls'
 alias trename='tmux rename-session -t'
+
+# opencode
+export PATH=/Users/{WHOAMI}/.opencode/bin:$PATH
+
