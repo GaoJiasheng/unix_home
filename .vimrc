@@ -285,3 +285,5 @@ autocmd bufnewfile *.py call HeaderPython()
  "let g:EasyMotion_smartcase = 1
  "let g:EasyMotion_startofline = 0 " keep cursor column when JK motion"
 syntax on
+" 先在终端输入 which ctags 确认路径，通常是 /opt/homebrew/bin/ctags
+let g:tagbar_ctags_bin = '/opt/homebrew/bin/ctags'

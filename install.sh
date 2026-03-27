@@ -34,6 +34,8 @@ install_file .bin
 
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
+[[ "$OSTYPE" == "darwin"* ]] && brew install universal-ctags
+
 
 if [ -d "$GOROOT" ]; then
     mkdir -p $HOME/.vim/ftdetect
