@@ -34,6 +34,7 @@ install_file .bin
 
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
+# environment path
 [[ "$OSTYPE" == "darwin"* ]] && brew install universal-ctags
 
 WHOAMI=`whoami`
@@ -49,6 +50,7 @@ mkdir -p $GOBIN
 mkdir -p $GOPATH
 
 
+# golang related configurations
 if [ -d "$GOROOT" ]; then
     mkdir -p $HOME/.vim/ftdetect
     mkdir -p $HOME/.vim/syntax
@@ -59,3 +61,5 @@ if [ -d "$GOROOT" ]; then
     echo "syntax on" >> $HOME/.vimrc
 fi
 
+#tmux 
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
