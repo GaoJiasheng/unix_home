@@ -36,6 +36,18 @@ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
 [[ "$OSTYPE" == "darwin"* ]] && brew install universal-ctags
 
+WHOAMI=`whoami`
+export CODEDIR="/Users/${WHOAMI}/work"
+export TOOL_DIR="$CODEDIR/tool"
+
+export GOROOT=$TOOL_DIR/go/go
+export GOBIN=$TOOL_DIR/go/go/bin
+export GOPATH=$TOOL_DIR/gopath
+
+mkdir -p $GOROOT
+mkdir -p $GOBIN
+mkdir -p $GOPATH
+
 
 if [ -d "$GOROOT" ]; then
     mkdir -p $HOME/.vim/ftdetect
@@ -46,3 +58,4 @@ if [ -d "$GOROOT" ]; then
     ln -s $GOROOT/misc/vim/autoload/go/complete.vim $HOME/.vim/autoload/go
     echo "syntax on" >> $HOME/.vimrc
 fi
+

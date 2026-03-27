@@ -287,3 +287,4 @@ autocmd bufnewfile *.py call HeaderPython()
 syntax on
 " 先在终端输入 which ctags 确认路径，通常是 /opt/homebrew/bin/ctags
 let g:tagbar_ctags_bin = '/opt/homebrew/bin/ctags'
+syntax on

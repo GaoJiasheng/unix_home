@@ -1,12 +1,10 @@
-# go配置
-#export CODEDIR="/Users/gavin/Library/Mobile\\ Documents/com~apple~CloudDocs/2code"
 WHOAMI=`whoami`
 export CODEDIR="/Users/${WHOAMI}/work"
-export TOOLDIR="$CODEDIR/tool"
+export TOOL_DIR="$CODEDIR/tool"
 
-export GOROOT=$CODEDIR/go/go
-export GOBIN=$CODEDIR/go/go//bin
-export GOPATH=$CODEDIR/gopath
+export GOROOT=$TOOL_DIR/go/go
+export GOBIN=$TOOL_DIR/go/go/bin
+export GOPATH=$TOOL_DIR/gopath
 
 export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$GOPATH/bin
@@ -16,20 +14,11 @@ export PATH=$PATH:/usr/local/vim/bin/
 #一些命令的配置
 alias gopath='cd "$GOPATH"'
 alias vi="vim"
-alias vim="/usr/local/vim/bin/vim"
 alias grep="grep -n --color"
-alias leetcode="cd /Users/gavin/work/gopath/src/github.com/gaojiasheng/JustForFun/Algrithm/leetcode"
-alias lc="cd /Users/gavin/work/gopath/src/github.com/gaojiasheng/JustForFun/Algrithm/leetcode"
 
-alias relay='smc toc 10.70.7.140'
 alias work='cd "/Users/gavin/work"'
-alias prom='cd "/Users/gavin/work/prometheus"'
-alias vm='cd "/Users/gavin/work/vm"'
+alias doc='cd "/Users/gavin/obsidian"'
 alias blog='cd "/Users/gavin/blog"'
-export GO111MODULE=auto
-export GOSUMDB=off
-export GOPROXY=https://goproxy.io,direct
-export GOPRIVATE=git.garena.com/shopee,git.garena.com/shopee-server,git.garena.com
 
 # tmux
 alias tnew='tmux new -s'
